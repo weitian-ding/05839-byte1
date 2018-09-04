@@ -25,17 +25,10 @@ def index():
     # render the web page with the data 
     return template.render()
 
-    
-@app.route('/about')
-def about():
-    template = JINJA_ENVIRONMENT.get_template('templates/about.html')
-    return template.render()
-
 @app.errorhandler(404)
 def page_not_found(e):
     """Return a custom 404 error."""
     return 'Sorry, Nothing at this URL.', 404
-
 
 @app.errorhandler(500)
 def application_error(e):
